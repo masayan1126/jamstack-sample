@@ -8,8 +8,6 @@ RUN apt-get update \
     && docker-php-ext-install zip pdo_mysql \
     && pecl install xdebug
 
-COPY ./php-fpm.d/zzz-www.conf /usr/local/etc/php-fpm.d/zzz-www.conf
-
 RUN useradd -ms /bin/bash -g www-data next-laravel-user \
     && echo "next-laravel-user:password" | chpasswd
     
